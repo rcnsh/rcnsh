@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 async function fetchTextFile(url: string): Promise<string> {
   try {
     const response = await fetch(url);
     return await response.text();
-  } catch (error) {
-    throw new Error(`Error fetching ${url}`);
+  } catch (error: any) {
+    throw new Error(`Error fetching ${url}: ${error.message}`);
   }
 }
 
@@ -16,14 +16,13 @@ async function getRandomWords(): Promise<string> {
         "https://gist.githubusercontent.com/RCNOverwatcher/9a0474af985c350e551effeeb10ffda5/raw/eaafbf8b9484f1ad76bcd592e14814b166615543/r.txt",
       ),
       fetchTextFile(
-        "https://gist.githubusercontent.com/RCNOverwatcher/87d6aae558377e7963bdf0100a7ab42d/raw/2c4189183b0c0cc6cea3fb505760553cd5784d7c/c.txt",
+        "https://gist.githubusercontent.com/RCNOverwatcher/87d6aae558377e7963bdf0100a7ab42d/raw/3b761bb8fc424da4f233402a361ce3fdc389b146/c.txt",
       ),
       fetchTextFile(
-        "https://gist.githubusercontent.com/RCNOverwatcher/c55b70e6346388015cfe3b37a8b4e45a/raw/ae572b532b77cb7adf28e46ad2a645b5ea4c6c7a/n.txt",
+        "https://gist.githubusercontent.com/RCNOverwatcher/c55b70e6346388015cfe3b37a8b4e45a/raw/a5e978162e8113691986fbddc093103c85563de0/n.txt",
       ),
     ]);
 
-    // Split and filter words
     const rWords = rText.split("\n").filter((word) => word.trim() !== "");
     const cWords = cText.split("\n").filter((word) => word.trim() !== "");
     const nWords = nText.split("\n").filter((word) => word.trim() !== "");
