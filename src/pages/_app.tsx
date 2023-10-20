@@ -1,5 +1,6 @@
 import { type AppType } from "next/dist/shared/lib/utils";
 import { JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import "@/styles/globals.css";
 import Footer from "@/components/footer";
@@ -16,6 +17,7 @@ const App: AppType = ({ Component, pageProps }) => {
     >
       <Component {...pageProps} />
       <Footer />
+      <Analytics />
     </div>
   );
 };
