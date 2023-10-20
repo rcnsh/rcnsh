@@ -37,13 +37,18 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
   return (
     <>
       <Head>
-        <title>rcn</title>
+        <title>rcn.sh</title>
         <meta name="description" content="rcn.sh" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={"container p-8"}>
         <section className="flex justify-center p-6">
-          <Image src={"/rcnLogo.png"} alt={""} height={128} width={128} />
+          <Image
+            src={"/rcnLogo.png"}
+            alt={"rcn logo"}
+            height={128}
+            width={128}
+          />
         </section>
         <span className={"flex justify-center text-[#cdc8c2]"}>{rcn}</span>
         &nbsp;
@@ -63,18 +68,22 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
           (Non-Exam Assessment) for <b>A-Level Computer Science</b>.
         </section>
         <section className={"container p-2 py-5 text-[#cdc8c2]"}>
-          My main programming languages are TypeScript and Python, but I also
-          know a bit of Rust and Visual Basic.
+          My main programming languages are TypeScript and Python, with my
+          primary frontend framework being Next.js, but I also know a bit of
+          Rust and Visual Basic.
         </section>
         <section className={"container p-2 py-5"}>
           {repos.length > 0 ? (
             <>
-              <h2 className={"py-4 text-xl text-white"}>
+              <h2 className={"py-4 text-xl font-bold text-white"}>
                 My GitHub Repositories
               </h2>
               <div className="grid grid-cols-3 gap-4">
                 {repos.map((repo: Repo) => (
-                  <div key={repo.name} className="p-6">
+                  <div
+                    key={repo.name}
+                    className="flex-col rounded-xl p-6 shadow-md"
+                  >
                     <Link
                       className={
                         "text-[#2d5c9a] underline visited:text-[#5a66af] hover:text-[#cdc8c2]"
