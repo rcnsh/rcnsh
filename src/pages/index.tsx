@@ -23,7 +23,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
       try {
         const response = await fetch("/api/rcn");
         const rcnData = await response.json();
-        setRcn(rcnData.randomWords || "");
+        setRcn(rcnData.randomWords || "​");
       } catch (error) {
         console.error("Error fetching rcnData:", error);
       }
@@ -32,6 +32,15 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
     fetchRcnData().catch((error) => {
       console.error("Error fetching rcnData:", error);
     });
+    const intervalId = setInterval(() => {
+      fetchRcnData().catch((error) => {
+        console.error("Error fetching rcnData:", error);
+      });
+    }, 10000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   return (
