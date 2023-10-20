@@ -46,6 +46,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
           <Image src={"/rcnLogo.png"} alt={""} height={128} width={128} />
         </section>
         <span className={"flex justify-center text-[#cdc8c2]"}>{rcn}</span>
+        &nbsp;
         <br />
         <section className={"container p-2 py-5 text-[#cdc8c2]"}>
           Hi! I&apos;m <b>Jacob</b> (aka{" "}
