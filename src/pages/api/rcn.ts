@@ -3,9 +3,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 async function fetchTextFile(url: string): Promise<string> {
   try {
     const response = await fetch(url);
-    if (!response.ok) {
-      new Error(`Failed to fetch ${url}`);
-    }
     return await response.text();
   } catch (error) {
     throw new Error(`Error fetching ${url}`);
