@@ -1,5 +1,5 @@
 import querystring from "querystring";
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const {
   SPOTIFY_CLIENT_ID: client_id,
@@ -37,21 +37,32 @@ export const getNowPlaying = async () => {
   });
 };
 
-export default async (_req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(
+  _req: NextApiRequest,
+  res: NextApiResponse,
+) {
   const response = await getNowPlaying();
 
   if (response.status === 204 || response.status > 400) {
     return res.status(200).json({ isPlaying: false });
   }
 
-  const song = await response.json();
+  const song: {
+    is_playing: boolean;
+    item: {
+      name: string;
+      artists: { name: string }[];
+      album: { name: string; images: { url: string }[] };
+      external_urls: { spotify: string };
+    };
+  } = await response.json();
   const isPlaying = song.is_playing;
   const title = song.item.name;
   const artist = song.item.artists
     .map((_artist: { name: any }) => _artist.name)
     .join(", ");
   const album = song.item.album.name;
-  const albumImageUrl = song.item.album.images[0].url;
+  const albumImageUrl = song.item.album.images[0]?.url ?? "https://spotify.com";
   const songUrl = song.item.external_urls.spotify;
 
   return res.status(200).json({
@@ -62,4 +73,4 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
     songUrl,
     title,
   });
-};
+}

@@ -3,11 +3,12 @@ import Link from "next/link";
 import useSWR from "swr";
 import { SiSpotify } from "react-icons/si";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Repo = {
   name: string;
   description: string;
-  stars: number;
+  stargazer_count: number;
   html_url: string;
 };
 
@@ -50,11 +51,11 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
         <span className={"text-[#cdc8c2]"}>{rcn}</span>
         <br />
         <section className={"container p-2 py-5 text-[#cdc8c2]"}>
-          Hi! I'm Jacob (aka <span className={"text-[#2d5c9a]"}>r</span>
+          Hi! I&apos;m Jacob (aka <span className={"text-[#2d5c9a]"}>r</span>
           <span className={"text-[#cdc8c2]"}>c</span>
           <span className={"text-[#5a66af]"}>n</span>), a computer science
-          student in Year 13. I'm currently working on a few projects, such as
-          my{" "}
+          student in Year 13. I&apos;m currently working on a few projects, such
+          as my{" "}
           <Link
             href={"https://github.com/RCNOverwatcher/virtue-gymnastics-website"}
             className={
@@ -76,7 +77,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
                 My GitHub Repositories
               </h2>
               <div className="grid grid-cols-3 gap-4">
-                {repos.map((repo: any) => (
+                {repos.map((repo: Repo) => (
                   <div key={repo.name} className="p-6">
                     <Link
                       className={
@@ -109,10 +110,12 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
           >
             <div className="w-16">
               {spotifyData?.isPlaying ? (
-                <img
+                <Image
                   className="w-16 shadow-sm"
                   src={spotifyData?.albumImageUrl}
                   alt={spotifyData?.album}
+                  width={64}
+                  height={64}
                 />
               ) : (
                 <SiSpotify size={64} color={"#1ED760"} />
@@ -142,10 +145,10 @@ export const getServerSideProps = async () => {
     const res = await fetch(`https://api.github.com/users/${username}/repos`);
     const repos = await res.json();
 
-    const repoData = repos.map((repo: any) => ({
+    const repoData = repos.map((repo: Repo) => ({
       name: repo.name,
       description: repo.description,
-      stargazers_count: repo.stargazers_count,
+      stars: repo.stargazer_count,
       html_url: repo.html_url,
     }));
 
