@@ -48,6 +48,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
             alt={"rcn logo"}
             height={128}
             width={128}
+            loading={"eager"}
           />
         </section>
         <span className={"flex justify-center text-[#cdc8c2]"}>{rcn}</span>
