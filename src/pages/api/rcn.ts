@@ -1,20 +1,50 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import fs from "fs/promises";
-import path from "path";
+import { NextApiRequest, NextApiResponse } from "next";
 
-async function getRandomWordFromFile(fileName: string): Promise<string> {
+async function fetchTextFile(url: string): Promise<string> {
   try {
-    const filePath = path.join(process.cwd(), "src/pages/api", fileName);
-    const data = await fs.readFile(filePath, "utf-8");
-    const words = data.split("\n").filter((word) => word.trim() !== ""); // Filter out empty lines
-    if (words.length === 0) {
-      console.error(`${fileName} is empty or contains only empty lines.`);
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${url}`);
+    }
+    return await response.text();
+  } catch (error) {
+    throw new Error(`Error fetching ${url}`);
+  }
+}
+
+async function getRandomWords(): Promise<string> {
+  try {
+    const [rText, cText, nText] = await Promise.all([
+      fetchTextFile(
+        "https://gist.githubusercontent.com/RCNOverwatcher/9a0474af985c350e551effeeb10ffda5/raw/a4fb1bc4266c457b0209669b307920b84edbc423/r.txt",
+      ),
+      fetchTextFile(
+        "https://gist.githubusercontent.com/RCNOverwatcher/87d6aae558377e7963bdf0100a7ab42d/raw/f711ada55e1d8eccb3f74ffbf079ed546c104c85/c.txt",
+      ),
+      fetchTextFile(
+        "https://gist.githubusercontent.com/RCNOverwatcher/c55b70e6346388015cfe3b37a8b4e45a/raw/ed87fd5bf7df62892341bc82a6681756f8c160e1/n.txt",
+      ),
+    ]);
+
+    // Split and filter words
+    const rWords = rText.split("\n").filter((word) => word.trim() !== "");
+    const cWords = cText.split("\n").filter((word) => word.trim() !== "");
+    const nWords = nText.split("\n").filter((word) => word.trim() !== "");
+
+    if (rWords.length === 0 || cWords.length === 0 || nWords.length === 0) {
+      console.error(
+        "One or more of the files is empty or contains only empty lines.",
+      );
       return "";
     }
-    const randomIndex = Math.floor(Math.random() * words.length);
-    return words[randomIndex]!;
+
+    const randomRWord = rWords[Math.floor(Math.random() * rWords.length)];
+    const randomCWord = cWords[Math.floor(Math.random() * cWords.length)];
+    const randomNWord = nWords[Math.floor(Math.random() * nWords.length)];
+
+    return `${randomRWord} ${randomCWord} ${randomNWord}`;
   } catch (error) {
-    throw new Error(`Error reading ${fileName}`);
+    throw new Error(`Error reading online files`);
   }
 }
 
@@ -23,16 +53,11 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   try {
-    const [rWord, cWord, nWord] = await Promise.all([
-      getRandomWordFromFile("r.txt"),
-      getRandomWordFromFile("c.txt"),
-      getRandomWordFromFile("n.txt"),
-    ]);
-
-    const formattedString = `${rWord} ${cWord} ${nWord}`;
+    const formattedString = await getRandomWords();
 
     res.status(200).json({ randomWords: formattedString });
   } catch (error) {
-    res.status(500).json({ error: "error occurred" });
+    console.error(error);
+    res.status(500).json({ error: "An error occurred" });
   }
 }

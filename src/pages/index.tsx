@@ -8,7 +8,6 @@ import Image from "next/image";
 type Repo = {
   name: string;
   description: string;
-  stargazer_count: number;
   html_url: string;
 };
 
@@ -51,11 +50,12 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
         <span className={"text-[#cdc8c2]"}>{rcn}</span>
         <br />
         <section className={"container p-2 py-5 text-[#cdc8c2]"}>
-          Hi! I&apos;m Jacob (aka <span className={"text-[#2d5c9a]"}>r</span>
+          Hi! I&apos;m <b>Jacob</b> (aka{" "}
+          <span className={"text-[#2d5c9a]"}>r</span>
           <span className={"text-[#cdc8c2]"}>c</span>
           <span className={"text-[#5a66af]"}>n</span>), a computer science
-          student in Year 13. I&apos;m currently working on a few projects, such
-          as my{" "}
+          student in <b>Year 13</b>. I&apos;m currently working on a few
+          projects, such as my{" "}
           <Link
             href={"https://github.com/RCNOverwatcher/virtue-gymnastics-website"}
             className={
@@ -64,7 +64,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
           >
             NEA
           </Link>{" "}
-          (Non-Exam Assessment) for A-Level Computer Science.
+          (Non-Exam Assessment) for <b>A-Level Computer Science</b>.
         </section>
         <section className={"container p-2 py-5 text-[#cdc8c2]"}>
           My main programming languages are TypeScript and Python, but I also
@@ -148,7 +148,6 @@ export const getServerSideProps = async () => {
     const repoData = repos.map((repo: Repo) => ({
       name: repo.name,
       description: repo.description,
-      stars: repo.stargazer_count,
       html_url: repo.html_url,
     }));
 
