@@ -42,12 +42,10 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={"container m-auto min-h-screen w-[50%] p-8"}>
-        <section className="p-6">
-          <span className={"text-[#2d5c9a]"}>r</span>
-          <span className={"text-[#cdc8c2]"}>c</span>
-          <span className={"text-[#5a66af]"}>n</span>
+        <section className="flex justify-center p-6">
+          <Image src={"/rcnLogo.png"} alt={""} height={128} width={128} />
         </section>
-        <span className={"text-[#cdc8c2]"}>{rcn}</span>
+        <span className={"flex justify-center text-[#cdc8c2]"}>{rcn}</span>
         <br />
         <section className={"container p-2 py-5 text-[#cdc8c2]"}>
           Hi! I&apos;m <b>Jacob</b> (aka{" "}
