@@ -9,13 +9,15 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
-const MyApp: AppType = ({ Component, pageProps }) => {
+const App: AppType = ({ Component, pageProps }) => {
   return (
-    <div className={`bg-[#171717] font-mono ${jetbrainsMono.variable} `}>
+    <div
+      className={`bg-[#171717] font-mono ${jetbrainsMono.variable} m-auto min-h-screen w-[50%]`}
+    >
       <Component {...pageProps} />
       <Footer />
     </div>
   );
 };
 
-export default MyApp;
+export default App;

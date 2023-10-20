@@ -4,7 +4,7 @@ async function fetchTextFile(url: string): Promise<string> {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${url}`);
+      new Error(`Failed to fetch ${url}`);
     }
     return await response.text();
   } catch (error) {
@@ -16,13 +16,13 @@ async function getRandomWords(): Promise<string> {
   try {
     const [rText, cText, nText] = await Promise.all([
       fetchTextFile(
-        "https://gist.githubusercontent.com/RCNOverwatcher/9a0474af985c350e551effeeb10ffda5/raw/a4fb1bc4266c457b0209669b307920b84edbc423/r.txt",
+        "https://gist.githubusercontent.com/RCNOverwatcher/9a0474af985c350e551effeeb10ffda5/raw/eaafbf8b9484f1ad76bcd592e14814b166615543/r.txt",
       ),
       fetchTextFile(
-        "https://gist.githubusercontent.com/RCNOverwatcher/87d6aae558377e7963bdf0100a7ab42d/raw/f711ada55e1d8eccb3f74ffbf079ed546c104c85/c.txt",
+        "https://gist.githubusercontent.com/RCNOverwatcher/87d6aae558377e7963bdf0100a7ab42d/raw/2c4189183b0c0cc6cea3fb505760553cd5784d7c/c.txt",
       ),
       fetchTextFile(
-        "https://gist.githubusercontent.com/RCNOverwatcher/c55b70e6346388015cfe3b37a8b4e45a/raw/ed87fd5bf7df62892341bc82a6681756f8c160e1/n.txt",
+        "https://gist.githubusercontent.com/RCNOverwatcher/c55b70e6346388015cfe3b37a8b4e45a/raw/ae572b532b77cb7adf28e46ad2a645b5ea4c6c7a/n.txt",
       ),
     ]);
 
