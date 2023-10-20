@@ -12,7 +12,7 @@ type Repo = {
 };
 
 export default function Home({ repoData }: { repoData: Repo[] }) {
-  const [rcn, setRcn] = useState<string>("");
+  const [rcn, setRcn] = useState<string>("​");
 
   const repos = repoData.slice(0, 6);
   const fetcher = (url: RequestInfo | URL) => fetch(url).then((r) => r.json());
