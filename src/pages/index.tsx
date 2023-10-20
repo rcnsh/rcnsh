@@ -111,8 +111,8 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
               {spotifyData?.isPlaying ? (
                 <Image
                   className="w-16 shadow-sm"
-                  src={spotifyData?.albumImageUrl}
-                  alt={spotifyData?.album}
+                  src={spotifyData.albumImageUrl}
+                  alt={spotifyData.album}
                   width={64}
                   height={64}
                 />
