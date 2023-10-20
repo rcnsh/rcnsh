@@ -76,7 +76,11 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
         <section className={"container p-2 py-5"}>
           {repos.length > 0 ? (
             <>
-              <h2 className={"py-4 text-xl font-bold text-white"}>
+              <h2
+                className={
+                  "flex justify-center py-4 text-xl font-bold text-white"
+                }
+              >
                 My GitHub Repositories
               </h2>
               <div className="grid grid-cols-3 gap-4">
