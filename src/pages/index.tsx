@@ -161,7 +161,11 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
 export const getServerSideProps = async () => {
   try {
     const username = "RCNOverwatcher";
-    const res = await fetch(`https://api.github.com/users/${username}/repos`);
+    const res = await fetch(`https://api.github.com/users/${username}/repos`, {
+      headers: {
+        Authorization: `token ${process.env.GITHUB_TOKEN}`,
+      },
+    });
     const repos = await res.json();
 
     const repoData = repos.map((repo: Repo) => ({
