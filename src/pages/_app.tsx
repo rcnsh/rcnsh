@@ -13,7 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 const App: AppType = ({ Component, pageProps }) => {
   return (
     <div
-      className={`bg-[#171717] font-mono ${jetbrainsMono.variable} m-auto min-h-screen w-[50%]`}
+      className={`bg-[#171717] font-mono ${jetbrainsMono.variable} m-auto max-h-screen min-h-screen w-[80%] text-center md:w-[50%] md:text-left`}
     >
       <Component {...pageProps} />
       <Footer />

@@ -50,7 +50,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
         <meta name="description" content="rcn.sh" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={"container p-8"}>
+      <main className={"container p-5"}>
         <section className="flex justify-center p-6">
           <Image
             src={"/rcnLogo.png"}
@@ -92,7 +92,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
               >
                 My GitHub Repositories
               </h2>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
                 {repos.map((repo: Repo) => (
                   <div
                     key={repo.name}
@@ -116,7 +116,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
             <h2 className={"text-[#2d5c9a]"}>Loading...</h2>
           )}
         </section>
-        <section className={"container p-2 py-5 text-[#cdc8c2]"}>
+        <section className={"py-5 text-[#cdc8c2]"}>
           <Link
             target="_blank"
             rel="noopener noreferer"
