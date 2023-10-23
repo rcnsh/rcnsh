@@ -8,7 +8,10 @@ function Footer() {
       <footer className={"flex justify-evenly"}>
         <span className={"font-bold text-[#cdc8c2]"}>Jacob Wiltshire</span>
         <section>
-          <Link href={"https://github.com/RCNOverwatcher"}>
+          <Link
+            href={"https://github.com/RCNOverwatcher"}
+            aria-label={"My Github"}
+          >
             <FaGithub size={32} color={"white"} />
           </Link>
         </section>
