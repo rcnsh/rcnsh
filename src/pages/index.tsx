@@ -63,7 +63,6 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
           />
         </section>
         <span className={"flex justify-center text-[#cdc8c2]"}>{rcn}</span>
-        &nbsp;
         <br />
         <section className={"container p-2 py-5 text-base text-[#cdc8c2]"}>
           Hi! I&apos;m <b>Jacob</b> (aka rcn), a computer science student in{" "}
