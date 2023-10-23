@@ -9,12 +9,14 @@ type Repo = {
   name: string;
   description: string;
   html_url: string;
+  stargazers_count: number;
 };
 
 export default function Home({ repoData }: { repoData: Repo[] }) {
   const [rcn, setRcn] = useState<string>("​");
 
   const repos = repoData.slice(0, 6);
+
   const fetcher = (url: RequestInfo | URL) => fetch(url).then((r) => r.json());
   const { data: spotifyData } = useSWR("/api/spotify", fetcher);
 
@@ -158,7 +160,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const username = "RCNOverwatcher";
     const res = await fetch(`https://api.github.com/users/${username}/repos`, {
@@ -168,19 +170,35 @@ export const getServerSideProps = async () => {
     });
     const repos = await res.json();
 
-    const repoData = repos.map((repo: Repo) => ({
-      name: repo.name,
-      description: repo.description,
-      html_url: repo.html_url,
-    }));
+    const repoNamesToInclude = [
+      "rcnsh",
+      "notes",
+      "virtue-gymnastics-website",
+      "RaspberryPyGame",
+      "Edexcel-Large-Data-Set-Analysis",
+      "fast_inverse_square_root",
+    ];
+
+    const filteredRepos = repos
+      .filter((repo: Repo) => repoNamesToInclude.includes(repo.name))
+      .map((repo: Repo) => ({
+        name: repo.name,
+        description: repo.description,
+        html_url: repo.html_url,
+        stargazers_count: repo.stargazers_count,
+      }));
 
     return {
-      props: { repoData },
+      props: {
+        repoData: filteredRepos,
+      },
+      revalidate: 86400,
     };
   } catch (error) {
     console.error("Error fetching data from GitHub API:", error);
     return {
       props: { repoData: [] },
+      revalidate: 86400,
     };
   }
 };
