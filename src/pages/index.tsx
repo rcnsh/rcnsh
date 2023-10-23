@@ -70,9 +70,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
           my{" "}
           <Link
             href={"https://github.com/RCNOverwatcher/virtue-gymnastics-website"}
-            className={
-              "text-[#5a66af] visited:text-[#5a66af] hover:text-[#cdc8c2]"
-            }
+            className={"text-[#737dbb] hover:text-[#cdc8c2]"}
           >
             NEA
           </Link>{" "}
@@ -101,7 +99,7 @@ export default function Home({ repoData }: { repoData: Repo[] }) {
                   >
                     <Link
                       className={
-                        "text-[#5a66af] underline hover:text-[#cdc8c2]"
+                        "text-[#737dbb] underline hover:text-[#cdc8c2]"
                       }
                       href={repo.html_url}
                     >
