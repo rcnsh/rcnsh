@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import "@/styles/globals.css";
 import Footer from "@/components/footer";
+import Layout from "@/pages/Layout";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -13,9 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 const App: AppType = ({ Component, pageProps }) => {
   return (
     <div
-      className={`bg-[#171717] font-mono ${jetbrainsMono.variable} m-auto w-[80%] text-center md:w-[50%] md:text-left`}
+      className={`bg-[#171717] font-mono ${jetbrainsMono.variable} m-auto w-[80%] text-center text-[#cdc8c2] md:w-[50%] md:text-left`}
     >
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <Footer />
       <Analytics />
     </div>
