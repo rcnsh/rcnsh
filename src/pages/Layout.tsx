@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-type LayoutProps = React.PropsWithChildren<{}>;
+type LayoutProps = React.PropsWithChildren;
 
 export default function Layout({ children }: LayoutProps) {
   const [rcn, setRcn] = useState<string>("​");

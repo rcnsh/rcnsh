@@ -128,13 +128,13 @@ export const getStaticProps = async () => {
     ];
 
     const filteredRepos = repos
-      .filter((repo: Repo) => repoNamesToInclude.includes(repo.name))
       .map((repo: Repo) => ({
         name: repo.name,
         description: repo.description,
         html_url: repo.html_url,
         stargazers_count: repo.stargazers_count,
-      }));
+      }))
+      .filter((repo: Repo) => repoNamesToInclude.includes(repo.name));
 
     return {
       props: {
