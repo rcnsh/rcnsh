@@ -1,20 +1,15 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { GeistSans } from "geist/font";
 
 import "@/styles/globals.css";
 import Footer from "@/components/footer";
 import Layout from "@/pages/Layout";
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
-
 const App: AppType = ({ Component, pageProps }) => {
   return (
     <div
-      className={`bg-[#171717] font-mono ${jetbrainsMono.variable} m-auto w-[80%] text-center text-[#cdc8c2] md:w-[50%] md:text-left`}
+      className={`m-auto w-[80%] bg-[#171717] text-center font-mono text-[#cdc8c2] md:w-[50%] md:text-left ${GeistSans.className}`}
     >
       <Layout>
         <Component {...pageProps} />

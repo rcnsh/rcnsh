@@ -19,6 +19,7 @@ const config = withMdx({
       },
     ],
   },
+  transpilePackages: ["geist"],
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
