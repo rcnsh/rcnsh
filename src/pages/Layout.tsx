@@ -88,7 +88,8 @@ export default function Layout({ children }: LayoutProps) {
         <meta name="description" content="rcn.sh" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={"container p-5"}>
+
+      <main className={" container p-5"}>
         <section className="flex justify-center p-6">
           <Image
             src={"/rcnLogo.png"}
