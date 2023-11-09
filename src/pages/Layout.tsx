@@ -1,9 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/dialog";
-import { useKonami } from "react-konami-code";
-
 type LayoutProps = React.PropsWithChildren;
 
 async function fetchTextFile(url: string): Promise<string> {
@@ -52,10 +49,6 @@ async function getRandomWords(): Promise<string> {
 
 export default function Layout({ children }: LayoutProps) {
   const [rcn, setRcn] = useState<string>("​");
-  const [dialogOpen, setDialogOpen] = useState(false);
-  useKonami(() => {
-    setDialogOpen(true);
-  });
 
   useEffect(() => {
     const fetchRcnData = async () => {
@@ -99,11 +92,7 @@ export default function Layout({ children }: LayoutProps) {
             loading={"eager"}
           />
         </section>
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogContent className={"flex justify-center"}>
-            <DialogTitle>You found me! Congrats?</DialogTitle>
-          </DialogContent>
-        </Dialog>
+
         <span className={"flex justify-center text-[#cdc8c2]"}>{rcn}</span>
         {children}
       </main>
