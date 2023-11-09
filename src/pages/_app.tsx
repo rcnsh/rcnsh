@@ -24,9 +24,6 @@ const App: AppType = ({ Component, pageProps }) => {
         !partyMode && "bg-[#171717]",
       )}
     >
-      <div className={clsx(partyMode && "backdrop")}></div>
-      <div className={clsx(partyMode && "noise")}></div>
-      <div className={clsx(partyMode && "dots")}></div>
       <div className={clsx(partyMode && "canvas", "min-h-[100dvh]")}>
         <div
           className={`font-mono ${GeistMono.className} m-auto w-[80%] text-center text-[#cdc8c2] md:w-[50%] md:text-left`}
@@ -50,6 +47,9 @@ const App: AppType = ({ Component, pageProps }) => {
           <Analytics />
         </div>
       </div>
+      <div className={clsx(partyMode && "backdrop")}></div>
+      <div className={clsx(partyMode && "noise")}></div>
+      <div className={clsx(partyMode && "dots")}></div>
     </main>
   );
 };
