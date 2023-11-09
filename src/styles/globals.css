@@ -23,8 +23,7 @@ html, body, #__next {
   --brightness: 1.25;
   --intersect: intersect;
   --depth: 100px;
-  --bg: conic-gradient(from 180deg at 50% 70%,hsla(0,0%,98%,1) 0deg,#eec32d 72.0000010728836deg,#ec4b4b 144.0000021457672deg,#709ab9 216.00000858306885deg,#4dffbf 288.0000042915344deg,hsla(0,0%,98%,1) 1turn);
-  /*   --bg: purple; */
+  --bg: conic-gradient(from 180deg at 50% 100%,#2c5b98,#5966af,#c5c0b8 1turn);
 }
 
 body {
@@ -55,7 +54,7 @@ body {
   background: var(--bg);
   mask:
           radial-gradient(circle at 50% 50%, white calc(var(--dot) * 1px), transparent calc((var(--dot) * 1px) + 0.5px)) 50% 50% / calc(var(--spread) * 1px) calc(var(--spread) * 1px),
-          url("https://assets.codepen.io/605876/noise-mask.png") calc(var(--size) * 1px) 50% / calc(var(--size) * 1px) calc(var(--size) * 1px);
+          url("/noise-mask.png") calc(var(--size) * 1px) 50% / calc(var(--size) * 1px) calc(var(--size) * 1px);
   mask-composite: var(--intersect);
   animation: flicker calc(var(--speed) * 1s) infinite linear;
   filter: brightness(var(--brightness));
@@ -75,7 +74,7 @@ body {
   mask: radial-gradient(circle at 50% 50%, white calc(var(--dot) * 1px), transparent calc((var(--dot) * 1px) + 0.5px)) 50% 50% / calc(var(--spread) * 1px) calc(var(--spread) * 1px);
 }
 .noise-mask .canvas {
-  mask: url("https://assets.codepen.io/605876/noise-mask.png") calc(var(--size) * 1px) 50% / calc(var(--size) * 1px) calc(var(--size) * 1px);
+  mask: url("/noise-mask.png") calc(var(--size) * 1px) 50% / calc(var(--size) * 1px) calc(var(--size) * 1px);
 }
 
 .backdrop {
@@ -89,7 +88,7 @@ body {
   background: var(--bg);
   position: absolute;
   inset: 0;
-  mask: url("https://assets.codepen.io/605876/noise-mask.png") calc(var(--size) * 1px) 50% / calc(var(--size) * 1px) calc(var(--size) * 1px);
+  mask: url("/noise-mask.png") calc(var(--size) * 1px) 50% / calc(var(--size) * 1px) calc(var(--size) * 1px);
   animation: flicker calc(var(--speed) * 1s) infinite linear;
 }
 
