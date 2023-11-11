@@ -1,7 +1,7 @@
 import { type AppType } from "next/dist/shared/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistMono } from "geist/font";
-import { useKonami } from "react-konami-code";
+import useKonami from "react-use-konami";
 import { clsx } from "clsx";
 
 import "@/styles/globals.css";
@@ -15,6 +15,18 @@ const App: AppType = ({ Component, pageProps }) => {
   useKonami(() => {
     setPartyMode(true);
   });
+
+  useKonami(
+    () => {
+      const barlow = new Audio(
+        "https://res.cloudinary.com/dtqhs8nvm/video/upload/f_auto:video,q_auto/d7pioi3ipstvuebvp64p",
+      );
+      barlow.play();
+    },
+    {
+      code: ["b", "a", "r", "l", "o", "w"],
+    },
+  );
 
   return (
     <main

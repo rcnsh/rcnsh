@@ -3043,13 +3043,6 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-konami-code@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-konami-code/-/react-konami-code-2.3.0.tgz#c78759a098a769536a2a921b8a1412d7f43d3ccb"
-  integrity sha512-9x90HnzstiMXs2kFS9cYsb5a+ojKEB/iC24uzNKCoE9znorLJwUcy98tjsiW2i5AHB05GuqIMTzV5RaDpVSThw==
-  dependencies:
-    prop-types "^15.8.1"
-
 react-remove-scroll-bar@^2.3.3:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.4.tgz#53e272d7a5cb8242990c7f144c44d8bd8ab5afd9"
@@ -3077,6 +3070,11 @@ react-style-singleton@^2.2.1:
     get-nonce "^1.0.0"
     invariant "^2.2.4"
     tslib "^2.0.0"
+
+react-use-konami@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-use-konami/-/react-use-konami-1.1.0.tgz#4e519b2749de33e5a9f12d7556c4534bebdf4028"
+  integrity sha512-l8mtrDywhR4CPYVyy13N2a/9rK1w0QtT82hE8lmNa1WBAakSdVToFSLrEWQjHq4LEBdIor/Uge/m+C+2k9R0XA==
 
 react@18.2.0:
   version "18.2.0"
