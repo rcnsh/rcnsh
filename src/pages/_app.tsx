@@ -17,11 +17,11 @@ const App: AppType = ({ Component, pageProps }) => {
   });
 
   useKonami(
-    () => {
+    async () => {
       const barlow = new Audio(
         "https://res.cloudinary.com/dtqhs8nvm/video/upload/f_auto:video,q_auto/d7pioi3ipstvuebvp64p",
       );
-      barlow.play();
+      await barlow.play();
     },
     {
       code: ["b", "a", "r", "l", "o", "w"],
