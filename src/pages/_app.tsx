@@ -1,6 +1,6 @@
 import { type AppType } from "next/dist/shared/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
-import { GeistMono } from "geist/font";
+import { GeistMono } from "geist/font/mono";
 import useKonami from "react-use-konami";
 import { clsx } from "clsx";
 
