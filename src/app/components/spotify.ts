@@ -1,4 +1,5 @@
 import querystring from "querystring";
+import { unstable_noStore } from "next/cache";
 
 type tokenStuff = {
   access_token: string;
@@ -92,6 +93,7 @@ const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-pla
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
+  unstable_noStore();
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {
@@ -115,6 +117,7 @@ const getAccessToken = async () => {
 };
 
 export const getNowPlaying = async () => {
+  unstable_noStore();
   try {
     const { access_token } = await getAccessToken();
 
