@@ -1,4 +1,5 @@
-import getRepos, { Repo } from "@/app/components/github";
+import getRepos from "@/app/components/github";
+import type { Repo } from "@/app/components/github";
 import Link from "next/link";
 
 function Skeleton() {
@@ -25,10 +26,10 @@ export function ReposSkeleton() {
 }
 
 export default async function Repos() {
-  const repos = await getRepos();
+  const repos = (await getRepos()) as Repo[];
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
-      {repos.map((repo: Repo) => (
+      {repos.map((repo) => (
         <div key={repo.name} className="flex-col rounded-xl p-6 shadow-md">
           <Link
             className={"text-[#737dbb] underline hover:text-[#cdc8c2]"}

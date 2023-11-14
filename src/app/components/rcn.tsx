@@ -28,6 +28,6 @@ export async function GetRCN() {
 }
 
 export async function RCN() {
-  let rcn = await GetRCN();
+  const rcn = await GetRCN();
   return <div className={"flex justify-center"}>{rcn}</div>;
 }

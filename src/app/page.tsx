@@ -7,9 +7,18 @@ import Repos, { ReposSkeleton } from "@/app/components/repos";
 import NowPlaying from "@/app/components/spotify";
 import { SiSpotify } from "react-icons/si";
 
+interface NowPlayingResult {
+  album: string;
+  albumImageUrl: string;
+  artist: string;
+  isPlaying: boolean;
+  songUrl: string;
+  title: string;
+}
+
 export default async function HomePage() {
   const { album, albumImageUrl, artist, isPlaying, songUrl, title } =
-    await NowPlaying();
+    (await NowPlaying()) as NowPlayingResult;
 
   return (
     <Party>

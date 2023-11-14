@@ -12,7 +12,7 @@ export default async function getRepos() {
       Authorization: `token ${process.env.GITHUB_TOKEN}`,
     },
   });
-  const repos = await res.json();
+  const repos = (await res.json()) as Repo[];
 
   const repoNamesToInclude = [
     "rcnsh",
@@ -24,7 +24,7 @@ export default async function getRepos() {
   ];
 
   return repos
-    .map((repo: Repo) => ({
+    .map((repo) => ({
       name: repo.name,
       description: repo.description,
       html_url: repo.html_url,
