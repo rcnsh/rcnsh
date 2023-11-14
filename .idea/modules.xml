@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/rcnsh.iml" filepath="$PROJECT_DIR$/.idea/rcnsh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rcnsh-app.iml" filepath="$PROJECT_DIR$/.idea/rcnsh-app.iml" />
     </modules>
   </component>
 </project>
