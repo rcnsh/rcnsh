@@ -22,7 +22,7 @@ export default async function HomePage() {
 
   return (
     <Party>
-      <section className="flex justify-center p-6">
+      <section className="my-10 flex justify-center p-6">
         <Image
           src={"/rcnLogo.png"}
           alt={"rcn logo"}
