@@ -23,7 +23,13 @@ export default async function HomePage() {
   return (
     <Party>
       <section className="flex justify-center p-6">
-        <Image src={"/rcnLogo.png"} alt={"rcn logo"} height={128} width={128} />
+        <Image
+          src={"/rcnLogo.png"}
+          alt={"rcn logo"}
+          height={128}
+          width={128}
+          loading={"eager"}
+        />
       </section>
       <Suspense fallback={<div>​</div>}>
         <RCN />
