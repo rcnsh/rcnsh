@@ -16,6 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          defer
+          src="https://eu.umami.is/script.js"
+          data-website-id="1d2fd91e-c319-4073-a31f-1f1507cfccc3"
+        ></script>
+        <title>rcn.sh</title>
+      </head>
       <body className={`font-mono ${GeistMono.className}`}>{children}</body>
     </html>
   );
