@@ -31,7 +31,7 @@ function Party({ children }: { children: React.ReactNode }) {
             <span className={"font-bold text-[#cdc8c2]"}>Jacob Wiltshire</span>
             <section>
               <Link
-                href={"https://github.com/RCNOverwatcher"}
+                href={"https://github.com/rcnsh"}
                 aria-label={"My Github"}
               >
                 <FaGithub size={32} color={"white"} />

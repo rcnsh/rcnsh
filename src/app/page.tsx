@@ -35,7 +35,7 @@ export default async function HomePage() {
           <b>Year 13</b>. I&apos;m currently working on a few projects, such as
           my{" "}
           <Link
-            href={"https://github.com/RCNOverwatcher/virtue-gymnastics-website"}
+            href={"https://github.com/rcnsh/virtue-gymnastics-website"}
             className={"text-[#737dbb] hover:text-[#cdc8c2]"}
           >
             NEA

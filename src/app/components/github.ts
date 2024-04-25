@@ -6,7 +6,7 @@ export type Repo = {
 };
 
 export default async function getRepos() {
-  const username = "RCNOverwatcher";
+  const username = "rcnsh";
   const res = await fetch(`https://api.github.com/users/${username}/repos`, {
     headers: {
       Authorization: `token ${process.env.GITHUB_TOKEN}`,
