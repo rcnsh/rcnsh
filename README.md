@@ -2,7 +2,7 @@
 
 computer science student · newcastle, on exchange at nus
 
-I study computer science at Newcastle University and I'm spending this year at the National University of Singapore. Most of what I write is TypeScript and Python, and most of it runs on Cloudflare.
+I study computer science at Newcastle University and I'm spending this year at the National University of Singapore.
 
 **now**
 
