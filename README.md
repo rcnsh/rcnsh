@@ -1,6 +1,6 @@
 ### jacob wiltshire
 
-computer science student · newcastle, on exchange at nus
+computer science student · newcastle, on exchange at nus · cloudflare workers enthusiast
 
 I study computer science at Newcastle University and I'm spending this year at the National University of Singapore.
 
