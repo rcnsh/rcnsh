@@ -7,7 +7,6 @@ I study computer science at Newcastle University and I'm spending this year at t
 **now**
 
 - [terminus](https://github.com/rcnsh/terminus): when to leave for the next NUS shuttle, worked out from your timetable. Android widget, Mac menu bar app and web, all served by one Cloudflare Worker. [terminus.run](https://terminus.run)
-- [cloudflare-gui](https://github.com/rcnsh/cloudflare-gui): a keyboard-driven macOS console for D1, KV, R2 and live Worker logs. Rust and GPUI.
 - [music-warehouse](https://github.com/rcnsh/music-warehouse): a Worker that keeps my full Spotify play history in a D1 database I own.
 - [website](https://github.com/rcnsh/website): [rcn.sh](https://rcn.sh). Writing, music, files and a guestbook, on Astro and Workers.
 
