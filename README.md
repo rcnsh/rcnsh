@@ -18,7 +18,7 @@ I study computer science at Newcastle University and I'm spending this year at t
 
 **listening**
 
-<a href="https://rcn.sh/music"><picture><source media="(prefers-color-scheme: dark)" srcset="https://rcn.sh/now.svg?theme=dark"><img alt="what I'm listening to" src="https://rcn.sh/now.svg"></picture></a>
+<a href="https://rcn.sh/music"><picture><source media="(prefers-color-scheme: dark)" srcset="https://rcn.sh/now.svg?theme=dark"><img alt="what I'm listening to" src="https://rcn.sh/now.svg" height="22"></picture></a>
 
 **elsewhere**
 
