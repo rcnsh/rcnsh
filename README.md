@@ -18,9 +18,7 @@ I study computer science at Newcastle University and I'm spending this year at t
 
 **listening**
 
-<!-- listening:start -->
-on repeat: [Alright](https://open.spotify.com/track/3iVcZ5G6tvkXZkZKlMpIUs) by Kendrick Lamar (last 7 days)
-<!-- listening:end -->
+<a href="https://rcn.sh/music"><picture><source media="(prefers-color-scheme: dark)" srcset="https://rcn.sh/now.svg?theme=dark"><img alt="what I'm listening to" src="https://rcn.sh/now.svg"></picture></a>
 
 **elsewhere**
 
