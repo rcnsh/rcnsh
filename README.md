@@ -12,7 +12,15 @@ I study computer science at Newcastle University and I'm spending this year at t
 
 **writing**
 
-- [Building terminus](https://rcn.sh/blog/building-terminus): how a shuttle planner for NUS fits on one Cloudflare Worker.
+<!-- writing:start -->
+- [Building terminus](https://rcn.sh/blog/building-terminus) · oct 2026: how I built a shuttle bus planner for NUS students on one Cloudflare Worker.
+<!-- writing:end -->
+
+**listening**
+
+<!-- listening:start -->
+on repeat: [Alright](https://open.spotify.com/track/3iVcZ5G6tvkXZkZKlMpIUs) by Kendrick Lamar (last 7 days)
+<!-- listening:end -->
 
 **elsewhere**
 
