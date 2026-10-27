@@ -1,4 +1,4 @@
-### jacob wiltshire
+### jacob · rcnsh
 
 computer science student · newcastle, on exchange at nus · cloudflare workers enthusiast
 
