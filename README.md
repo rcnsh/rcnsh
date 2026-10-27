@@ -12,7 +12,13 @@ I study computer science at Newcastle University and I'm spending this year at t
 
 **writing**
 
-- [Building terminus](https://rcn.sh/blog/building-terminus): how a shuttle planner for NUS fits on one Cloudflare Worker.
+<!-- writing:start -->
+- [Building terminus](https://rcn.sh/blog/building-terminus) · oct 2026: how I built a shuttle bus planner for NUS students on one Cloudflare Worker.
+<!-- writing:end -->
+
+**listening**
+
+<a href="https://rcn.sh/music"><picture><source media="(prefers-color-scheme: dark)" srcset="https://rcn.sh/now.svg?theme=dark"><img alt="what I'm listening to" src="https://rcn.sh/now.svg"></picture></a>
 
 **elsewhere**
 
