@@ -13,8 +13,8 @@ I study computer science at Newcastle University and I'm spending this year at t
 **writing**
 
 <!-- writing:start -->
-- [Making a Discord stealer decrypt itself](https://rcn.sh/blog/decrypting-a-discord-stealer) · oct 2026: how a fake indie game stole a friend's Discord account, and how I got the malware to give up its own secrets.
-- [Building terminus](https://rcn.sh/blog/building-terminus) · oct 2026: how I built a shuttle bus planner for NUS students on one Cloudflare Worker.
+- [Making a Discord stealer decrypt itself](https://rcn.sh/blog/decrypting-a-discord-stealer) · oct 2026: using dynamic analysis to reverse engineer a turkish infostealer.
+- [Building terminus](https://rcn.sh/blog/building-terminus) · oct 2026: building a shuttle bus planner for the National University of Singapore.
 <!-- writing:end -->
 
 **listening**
